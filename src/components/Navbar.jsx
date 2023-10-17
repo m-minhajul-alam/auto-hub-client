@@ -5,18 +5,18 @@ const Navbar = () => {
         <li><NavLink to={"/"}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" :
-                    isActive ? "text-gray-400 font-semibold"
-                        : "text-gray-400 font-light"
+                    isActive ? "font-semibold"
+                        : "font-light"
             }> Home </NavLink></li>
     </>
 
     return (
         <div>
             {/* Navbar for md and lg screen */}
-            <div className="navbar max-w-6xl w-[90%] mx-auto hidden lg:flex">
+            <div className="navbar hidden lg:flex">
                 <div data-aos="fade-down" data-aos-duration="1000" className="navbar-start">
                     <a href='/'
-                        className="text-xl font-bold text-gray-400">
+                        className="text-xl font-bold ">
                         <span>auto<span className="text-red-500">Hub</span></span></a>
                 </div>
 
@@ -32,10 +32,10 @@ const Navbar = () => {
             </div>
 
             {/* Navbar for sm screen */}
-            <div className="navbar w-[90%] mx-auto text-white lg:hidden">
+            <div className="navbar lg:hidden">
                 <div className="flex-1">
                     <a href='/'
-                        className="text-xl font-bold text-gray-400">
+                        className="text-xl font-bold ">
                         <span>auto<span className="text-red-500">Hub</span></span></a>
                 </div>
 
