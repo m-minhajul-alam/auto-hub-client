@@ -6,7 +6,7 @@ const Footer = () => {
                     className="text-4xl font-bold ">
                     <span>auto<span className="text-red-500">Hub</span></span></a>
                 <p className="font-bold">
-                    AutoHub Industries Ltd. <br />Providing reliable autos since 1992
+                    AutoHub Industrie Ltd. <br />Providing reliable autos since 1992
                 </p>
                 <p>Copyright © 2023 - All right reserved</p>
             </aside>
