@@ -3,6 +3,7 @@ import Root from "../root/Root";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import AddProduct from "../pages/AddProduct";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => fetch("/brands.json")
+            },
+            {
+                path: '/addProduct',
+                element: <AddProduct></AddProduct>
             },
             {
                 path: '/register',
