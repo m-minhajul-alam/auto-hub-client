@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "logo": "https://i.ibb.co/RDC2H7H/toyota-250.png",
+        "name": "Toyota"
+    },
+    {
+        "id": 2,
+        "logo": "https://i.ibb.co/MgxpqD7/ford-250.png",
+        "name": "Ford"
+    },
+    {
+        "id": 3,
+        "logo": "https://i.ibb.co/cXDMcHy/bmw-250.png",
+        "name": "BMW"
+    },
+    {
+        "id": 4,
+        "logo": "https://i.ibb.co/gv3W0zf/mercedes-benz-250.png",
+        "name": "Mercedes-Benz"
+    },
+    {
+        "id": 5,
+        "logo": "https://i.ibb.co/dbMn5hg/tesla-250.png",
+        "name": "Tesla"
+    },
+    {
+        "id": 6,
+        "logo": "https://i.ibb.co/qj4HHBH/honda-250.png",
+        "name": "Honda"
+    }
+]
