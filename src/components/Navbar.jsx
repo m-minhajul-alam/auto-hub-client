@@ -5,9 +5,15 @@ const Navbar = () => {
         <li><NavLink to={"/"}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" :
-                    isActive ? "font-semibold"
+                    isActive ? "font-semibold text-red-500"
                         : "font-light"
             }> Home </NavLink></li>
+        <li><NavLink to={"/login"}
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" :
+                    isActive ? "font-semibold  text-red-500"
+                        : "font-light"
+            }> Login </NavLink></li>
     </>
 
     return (
@@ -17,7 +23,7 @@ const Navbar = () => {
                 <div data-aos="fade-down" data-aos-duration="1000" className="navbar-start">
                     <a href='/'
                         className="text-xl font-bold ">
-                        <span>auto<span className="text-red-500">Hub</span></span></a>
+                        <span>AUTO<span className="text-red-500">Hub</span></span></a>
                 </div>
 
                 <div data-aos="fade-down" data-aos-duration="1000" className="navbar-center flex">

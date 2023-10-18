@@ -45,10 +45,17 @@ const Register = () => {
             })
     }
 
+    const hendelGoogleReg = () => {
+        googleSingIn()
+            .then(result => console.log(result.user))
+            .catch(error => console.log(error.message))
+        navigate(location?.state ? location.state : '/')
+    }
+
     return (
         <div>
             <div className="h-20">
-                <h1 className="text-red-500 text-3xl text-center font-bold pt-3">Register Now!</h1>
+                <h1 className="text-red-500 text-3xl text-center font-bold">Register Now!</h1>
             </div>
             <div className="hero">
                 <div className="flex-shrink-0 w-full max-w-sm">
@@ -87,8 +94,8 @@ const Register = () => {
                         <p className="text-xs text-center">Alredy have account? Please <Link
                             className="text-red-500 font-bold hover:underline" to={"/login"}>Login</Link>
                         </p>
-
                     </form>
+                    <button onClick={hendelGoogleReg} className='text-center w-full py-1 font-bold my-2'>Singin With Google</button>
                 </div>
             </div>
         </div>
