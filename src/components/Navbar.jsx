@@ -1,6 +1,14 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../proivders/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handelLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
     const navLinks = <>
         <li><NavLink to={"/"}
             className={({ isActive, isPending }) =>
@@ -33,7 +41,18 @@ const Navbar = () => {
                 </div>
 
                 <div data-aos="fade-down" data-aos-duration="1000" className="navbar-end">
-                    <img className="w-8 rounded-full mr-2" src="https://i.ibb.co/r69Q4h6/user-icon-gray.png" />
+                    <div className="flex justify-center items-center gap-2">
+                        {
+                            user ? <div className="flex flex-col items-end text-gray-400">
+                                <p>{user.displayName}</p>
+                                <button onClick={handelLogOut} className="text-gray-400 text-xs font-bold">Logout</button></div>
+                                : " "
+                        }
+                        {
+                            user ? <img className="w-10 rounded-full" src={user.photoURL || "https://i.ibb.co/r69Q4h6/user-icon-gray.png"} />
+                                : <img className="w-10 rounded-full" src="https://i.ibb.co/r69Q4h6/user-icon-gray.png" />
+                        }
+                    </div>
                     <label className="swap swap-rotate">
 
                         {/* this hidden checkbox controls the state */}
@@ -54,21 +73,37 @@ const Navbar = () => {
                 <div className="flex-1">
                     <a href='/'
                         className="text-xl font-bold ">
-                        <span>auto<span className="text-red-500">Hub</span></span></a>
+                        <span>AUTO<span className="text-red-500">Hub</span></span></a>
                 </div>
 
                 <div className="flex justify-end flex-1 px-2">
                     <div className="flex items-stretch">
                         <div className="dropdown text-blue-950 dropdown-end mr-2">
                             <label tabIndex={0} className="\">
-                                <img className="w-8 rounded-full" src="https://i.ibb.co/r69Q4h6/user-icon-gray.png" />
+                                {
+                                    user ? <img className="w-8 rounded-full" src={user.photoURL || "https://i.ibb.co/r69Q4h6/user-icon-gray.png"} />
+                                        : <img className="w-8 rounded-full" src="https://i.ibb.co/r69Q4h6/user-icon-gray.png" />
+                                }
                             </label>
-                            <ul tabIndex={0} className="dropdown-content z-[1] p-2 pl-5 shadow bg-base-100 w-40 mt-3">
+                            <ul tabIndex={0} className="dropdown-content z-[1] p-2 text-center text-gray-400 shadow bg-base-100 w-40 mt-3">
+                                <li>
+                                    {
+                                        user ?
+                                            <p className="text-gray-400">{user.displayName}</p>
+                                            : " "
+                                    }
+                                </li>
+                                <li>
+                                    {
+                                        user ?
+                                            <button onClick={handelLogOut} className="text-gray-400">Logout</button>
+                                            : " "
+                                    }
+                                </li>
                                 {navLinks}
                             </ul>
                         </div>
                         <label className="swap swap-rotate">
-
                             {/* this hidden checkbox controls the state */}
                             <input type="checkbox" />
 
@@ -77,7 +112,6 @@ const Navbar = () => {
 
                             {/* moon icon */}
                             <svg className="swap-off fill-current w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
-
                         </label>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ const Home = () => {
             <Banner></Banner>
             <div className="mt-2 mb-16">
                 <h2 className="text-3xl font-bold text-center  mb-7">Populer <span className="text-red-500">Brands</span></h2>
-                <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
                     {
                         brands.map(brand => <div key={brand.id} className="rounded-2xl border-2 border-gray-400 hover:border-red-500 p-2">
                             <Link>
