@@ -1,17 +1,38 @@
-const AddProduct = () => {
+import Swal from "sweetalert2";
 
+const AddProduct = () => {
     const handelAddProduct = (e) => {
         e.preventDefault();
-        const from = new FormData(e.currentTarget);
-        const productImage = (from.get('productImage'));
-        const productName = (from.get('productName'));
-        const brandName = (from.get('brandName'));
-        const productType = (from.get('productType'));
-        const productPrice = (from.get('productPrice'));
-        const shortDesc = (from.get('shortDesc'));
-        const rating = (from.get('rating'));
+        const form = new FormData(e.currentTarget);
+        const productImage = (form.get('productImage'));
+        const productName = (form.get('productName'));
+        const brandName = (form.get('brandName'));
+        const productType = (form.get('productType'));
+        const productPrice = (form.get('productPrice'));
+        const shortDesc = (form.get('shortDesc'));
+        const rating = (form.get('rating'));
         const newProduct = { productImage, productName, brandName, productType, productPrice, shortDesc, rating };
-        console.log(newProduct);
+        // console.log(newProduct);
+
+        fetch('http://localhost:5000/products', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'New Coffee Added',
+                        icon: 'success',
+                        confirmButtonText: 'Okay'
+                    })
+                }
+            })
     }
 
     return (
@@ -31,9 +52,9 @@ const AddProduct = () => {
                         </div>
 
                         <select name='brandName' className="select select-bordered w-full my-2" required>
-                            <option disabled selected>Select a Brand Name</option>
+                            <option disabled selected >Select a Brand Name</option>
                             <option>Toyota</option>
-                            <option>Ford</option>
+                            <option>Rolls Royce</option>
                             <option>BMW</option>
                             <option>Mercedes-Benz</option>
                             <option>Tesla</option>
@@ -57,7 +78,7 @@ const AddProduct = () => {
                         </div>
 
                         <div className="form-control my-2">
-                            <button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white">Add Product</button>
+                            <input type="submit" className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white" value="Add Product" />
                         </div>
                     </form>
                 </div>
@@ -65,5 +86,6 @@ const AddProduct = () => {
         </div>
     );
 };
+
 
 export default AddProduct;
