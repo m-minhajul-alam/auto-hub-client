@@ -12,7 +12,7 @@ const Home = () => {
                 <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
                     {
                         brands.map(brand => <div key={brand.id} className="rounded-2xl border-2 border-gray-400 hover:border-red-500 p-2">
-                            <Link>
+                            <Link to={`/${brand.id}`}>
                                 <img className="mx-auto p-4" src={brand.logo} alt="" />
                                 <h4 className="text-xl font-light text-center ">{brand.name}</h4>
                             </Link>
