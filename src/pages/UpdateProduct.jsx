@@ -1,10 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
     const loadedProduct = useLoaderData();
     const { _id, productImage, productName, brandName, productType, productPrice, shortDesc, rating } = loadedProduct;
-
+    const navigate = useNavigate();
+    
     const handelUpdateProduct = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -16,7 +17,6 @@ const UpdateProduct = () => {
         const shortDesc = (form.get('shortDesc'));
         const rating = (form.get('rating'));
         const updateProduct = { productImage, productName, brandName, productType, productPrice, shortDesc, rating };
-        console.log(updateProduct);
 
         fetch(`http://localhost:5000/products/${_id}`, {
             method: 'PUT',
@@ -37,6 +37,8 @@ const UpdateProduct = () => {
                     })
                 }
             })
+
+        navigate(location?.state ? location.state : '/')
     }
 
     return (

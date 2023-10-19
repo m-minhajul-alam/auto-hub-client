@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import Slider from "../components/Slider";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
+
+    const { id } = useParams();
+    if (id == 1) {
+        products.find(product => product.brandName === "BMW")
+        setProducts(products);
+    }
 
     useEffect(() => {
         fetch('http://localhost:5000/products')
@@ -19,7 +25,6 @@ const Products = () => {
     return (
         <div>
             <Slider></Slider>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                 {
                     products ? products.map(product => <div className="border border-gray-400 rounded-md text-center p-2 " key={product._id}>
@@ -39,7 +44,6 @@ const Products = () => {
                         </div>
                 }
             </div>
-
         </div>
     );
 };
