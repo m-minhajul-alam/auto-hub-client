@@ -55,7 +55,7 @@ const Register = () => {
     return (
         <div>
             <div className="h-20">
-                <h1 className="text-red-500 text-3xl text-center font-bold">Register Now!</h1>
+                <h1 className="text-red-600 text-3xl text-center font-bold">Register Now!</h1>
             </div>
             <div className="hero">
                 <div className="flex-shrink-0 w-full max-w-sm">
@@ -72,27 +72,27 @@ const Register = () => {
                         <div className="relative form-control my-2">
                             <input type={showPass ? "text" : "password"} name='password' placeholder="Your Password" className="input input-bordered" required />
                             <span onClick={() => setShowPass(!showPass)}
-                                className="absolute top-1/3 right-3 text-red-500 text-xs font-bold cursor-pointer">
+                                className="absolute top-1/3 right-3 text-red-600 text-xs font-bold cursor-pointer">
                                 {
                                     showPass ? "Hide" : "Show"
                                 }
                             </span>
                         </div>
                         {
-                            passError && <p className="text-xs text-red-500 font-bold ml-3 mt-2">{passError}</p>
+                            passError && <p className="text-xs text-red-600 font-bold ml-3 mt-2">{passError}</p>
                         }
 
                         {
                             regSuccess && <p className="text-xs text-green-500 text-center font-bold">{regSuccess}</p>
                         }
                         {
-                            emailError && <p className="text-xs text-red-500 font-bold ml-3 mt-2">{emailError}</p>
+                            emailError && <p className="text-xs text-red-600 font-bold ml-3 mt-2">{emailError}</p>
                         }
                         <div className="form-control my-2">
-                            <button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white">Register</button>
+                            <button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Register</button>
                         </div>
                         <p className="text-xs text-center">Alredy have account? Please <Link
-                            className="text-red-500 font-bold hover:underline" to={"/login"}>Login</Link>
+                            className="text-red-600 font-bold hover:underline" to={"/login"}>Login</Link>
                         </p>
                     </form>
                     <button onClick={hendelGoogleReg} className='text-center w-full py-1 font-bold my-2'>Singin With Google</button>

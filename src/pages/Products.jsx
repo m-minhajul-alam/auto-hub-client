@@ -16,8 +16,6 @@ const Products = () => {
             });
     }, []);
 
-    console.log(products);
-
     return (
         <div>
             <Slider></Slider>
@@ -31,10 +29,12 @@ const Products = () => {
                         <p className="">Type: {product.productType} </p>
                         <p>Price: {product.productPrice}$ </p>
                         <p className="mb-2">Rating: {product.rating}/10 </p>
-                        <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white mb-2 mr-6">Details</button></Link>
-                        <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white ">Update</button></Link>
+                        <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white mb-2 mr-6">Details</button></Link>
+                        <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Update</button></Link>
                     </div>)
-                        : <div><p>No Data Found</p></div>
+                        : <div className="min-h-screen flex items-center justify-center">
+                            <p className="text-xl text-red-600">No Data Found</p>
+                        </div>
                 }
             </div>
 

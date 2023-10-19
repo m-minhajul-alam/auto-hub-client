@@ -36,7 +36,7 @@ const AddProduct = () => {
     return (
         <div>
             <div className="h-20">
-                <h1 className="text-red-500 text-3xl text-center font-bold">Add A New Product</h1>
+                <h1 className="text-red-600 text-3xl text-center font-bold">Add A New Product</h1>
             </div>
             <div className="hero">
                 <div className="flex-shrink-0 w-full max-w-sm">
@@ -76,7 +76,7 @@ const AddProduct = () => {
                         </div>
 
                         <div className="form-control my-2">
-                            <input type="submit" className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white" value="Add Product" />
+                            <input type="submit" className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white" value="Add Product" />
                         </div>
                     </form>
                 </div>

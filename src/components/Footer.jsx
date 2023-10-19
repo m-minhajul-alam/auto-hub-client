@@ -4,7 +4,7 @@ const Footer = () => {
             <aside>
                 <a href='/'
                     className="text-4xl font-bold ">
-                    <span>AUTO<span className="text-red-500">Hub</span></span></a>
+                    <span>AUTO<span className="text-red-600">Hub</span></span></a>
                 <p className="font-bold">
                     AutoHub Industrie Ltd. <br />Providing reliable autos since 1992
                 </p>

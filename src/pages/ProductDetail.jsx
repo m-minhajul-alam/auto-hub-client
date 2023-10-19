@@ -42,7 +42,7 @@ const ProductDetail = () => {
                         <h5 className="text-sm font-bold mb-2">Short Description: <span className="text-lg  mb-4">{shortDesc}</span></h5>
                         <h5 className="text-sm font-bold mb-2">Rating: <span className="text-lg">{rating}/10</span></h5>
                         <h5 className="text-sm font-bold">Product Price: <span className="font-normal"> {productPrice}$</span></h5>
-                        <button onClick={handelMyCart} className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white mt-5">Add To Cart</button>
+                        <button onClick={handelMyCart} className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white mt-5">Add To Cart</button>
                     </div>
                 </div>
             </div>

@@ -13,28 +13,28 @@ const Navbar = () => {
         <li><NavLink to={"/"}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" :
-                    isActive ? "font-semibold text-red-500"
+                    isActive ? "font-semibold text-red-600"
                         : "font-light"
             }> Home </NavLink></li>
 
         <li><NavLink to={"/addProduct"}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" :
-                    isActive ? "font-semibold  text-red-500"
+                    isActive ? "font-semibold  text-red-600"
                         : "font-light"
             }> Add Product </NavLink></li>
 
         <li><NavLink to={"/myCart"}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" :
-                    isActive ? "font-semibold  text-red-500"
+                    isActive ? "font-semibold  text-red-600"
                         : "font-light"
             }> My Cart </NavLink></li>
 
         <li><NavLink to={"/login"}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" :
-                    isActive ? "font-semibold  text-red-500"
+                    isActive ? "font-semibold  text-red-600"
                         : "font-light"
             }> Login </NavLink></li>
     </>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <div data-aos="fade-down" data-aos-duration="1000" className="navbar-start">
                     <a href='/'
                         className="text-xl font-bold ">
-                        <span>AUTO<span className="text-red-500">Hub</span></span></a>
+                        <span>AUTO<span className="text-red-600">Hub</span></span></a>
                 </div>
 
                 <div data-aos="fade-down" data-aos-duration="1000" className="navbar-center flex">
@@ -88,12 +88,12 @@ const Navbar = () => {
                 <div className="flex-1">
                     <a href='/'
                         className="text-xl font-bold ">
-                        <span>AUTO<span className="text-red-500">Hub</span></span></a>
+                        <span>AUTO<span className="text-red-600">Hub</span></span></a>
                 </div>
 
                 <div className="flex justify-end flex-1 px-2">
                     <div className="flex items-stretch">
-                        <div className="dropdown text-blue-950 dropdown-end mr-2">
+                        <div className="dropdown text-gray-400 dropdown-end mr-2">
                             <label tabIndex={0} className="\">
                                 {
                                     user ? <img className="w-8 rounded-full" src={user.photoURL || "https://i.ibb.co/r69Q4h6/user-icon-gray.png"} />

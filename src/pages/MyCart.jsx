@@ -57,7 +57,7 @@ const MyCart = () => {
     return (
         <div>
             <div className="h-20">
-                <h1 className="text-red-500 text-3xl text-center font-bold">My Cart</h1>
+                <h1 className="text-red-600 text-3xl text-center font-bold">My Cart</h1>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
@@ -69,8 +69,8 @@ const MyCart = () => {
                         <p className="">Type: {myCart.productType} </p>
                         <p>Price: {myCart.productPrice}$ </p>
                         <p className="mb-2">Rating: {myCart.rating}/10 </p>
-                        <Link to={`/productDetail/${myCart._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white mb-2 mr-6">Details</button></Link>
-                        <button onClick={() => handelDelete(myCart._id)} className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white ">Delete</button>
+                        <Link to={`/productDetail/${myCart._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white mb-2 mr-6">Details</button></Link>
+                        <button onClick={() => handelDelete(myCart._id)} className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Delete</button>
                     </div>)
                 }
             </div>
