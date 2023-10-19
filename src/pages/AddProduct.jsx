@@ -12,7 +12,6 @@ const AddProduct = () => {
         const shortDesc = (form.get('shortDesc'));
         const rating = (form.get('rating'));
         const newProduct = { productImage, productName, brandName, productType, productPrice, shortDesc, rating };
-        // console.log(newProduct);
 
         fetch('http://localhost:5000/products', {
             method: 'POST',
@@ -23,7 +22,6 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
