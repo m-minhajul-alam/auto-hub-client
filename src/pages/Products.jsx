@@ -29,8 +29,8 @@ const Products = () => {
                         <h4 className="text-xl font-bold pb-2">Name: {product.productName}</h4>
                         <p className="text-base font-bold">Band Name: {product.brandName}</p>
                         <p className="">Type: {product.productType} </p>
-                        <p>Price: {product.productPrice} </p>
-                        <p className="mb-2">Rating: {product.rating} </p>
+                        <p>Price: {product.productPrice}$ </p>
+                        <p className="mb-2">Rating: {product.rating}/10 </p>
                         <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white mb-2 mr-6">Details</button></Link>
                         <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white ">Update</button></Link>
                     </div>)
