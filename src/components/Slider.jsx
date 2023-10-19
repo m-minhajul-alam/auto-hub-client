@@ -1,4 +1,3 @@
-
 const Slider = () => {
     return (
         <div className="carousel w-full">
