@@ -25,7 +25,7 @@ const Products = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                 {
                     products ? products.map(product => <div className="border border-gray-400 rounded-md space-x-5" key={product._id}>
-                        <img className="h-56 py-2" src={product.productImage} alt="" />
+                        <img className="h-56 p-2" src={product.productImage} alt="" />
                         <h4 className="text-xl font-bold pb-2">Name: {product.productName}</h4>
                         <p className="text-base font-bold">Band Name: {product.brandName}</p>
                         <p className="">Type: {product.productType} </p>

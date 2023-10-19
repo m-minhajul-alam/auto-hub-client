@@ -24,6 +24,13 @@ const Navbar = () => {
                         : "font-light"
             }> Add Product </NavLink></li>
 
+        <li><NavLink to={"/myCart"}
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" :
+                    isActive ? "font-semibold  text-red-500"
+                        : "font-light"
+            }> My Cart </NavLink></li>
+
         <li><NavLink to={"/login"}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" :
