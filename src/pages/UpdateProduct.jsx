@@ -1,10 +1,7 @@
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-import { useLoaderData } from "react-router-dom";
-
-
 const UpdateProduct = () => {
-
     const loadedProduct = useLoaderData();
     const { _id, productImage, productName, brandName, productType, productPrice, shortDesc, rating } = loadedProduct;
 
@@ -26,9 +23,9 @@ const UpdateProduct = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify()
+            body: JSON.stringify(updateProduct)
         })
-            .then(res => res.json(updateProduct))
+            .then(res => res.json())
             .then(data => {
                 // console.log(data);
                 if (data.modifiedCount > 0) {

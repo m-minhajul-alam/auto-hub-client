@@ -31,7 +31,7 @@ const Products = () => {
                         <p className="">Type: {product.productType} </p>
                         <p>Price: {product.productPrice} </p>
                         <p className="mb-2">Rating: {product.rating} </p>
-                        <button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white mb-2 mr-6">Details</button>
+                        <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white mb-2 mr-6">Details</button></Link>
                         <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-500 hover:bg-red-700 text-white ">Update</button></Link>
                     </div>)
                         : <div><p>No Data Found</p></div>
