@@ -68,7 +68,7 @@ const Login = () => {
                                 Register</Link>
                         </p>
 
-                        <button onClick={hendelGoogleReg} className='text-center w-full py-1 font-bold my-2'>Login With Google</button>
+                        <button onClick={hendelGoogleReg} type='submit' className='text-center w-full py-1 font-bold my-2'>Login With Google</button>
                     </form>
                 </div>
             </div>

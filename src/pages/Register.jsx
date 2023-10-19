@@ -95,7 +95,7 @@ const Register = () => {
                             className="text-red-600 font-bold hover:underline" to={"/login"}>Login</Link>
                         </p>
                     </form>
-                    <button onClick={hendelGoogleReg} className='text-center w-full py-1 font-bold my-2'>Singin With Google</button>
+                    <button onClick={hendelGoogleReg} type="submit" className='text-center w-full py-1 font-bold my-2'>Singin With Google</button>
                 </div>
             </div>
         </div>

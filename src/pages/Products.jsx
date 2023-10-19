@@ -20,17 +20,19 @@ const Products = () => {
         <div>
             <Slider></Slider>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                 {
-                    products ? products.map(product => <div className="border border-gray-400 rounded-md space-x-5" key={product._id}>
-                        <img className="h-56 p-2" src={product.productImage} alt="" />
-                        <h4 className="text-xl font-bold pb-2">Name: {product.productName}</h4>
+                    products ? products.map(product => <div className="border border-gray-400 rounded-md text-center p-2 " key={product._id}>
+                        <img className="h-56" src={product.productImage} alt="" />
+                        <h4 className="text-xl font-bold">Name: {product.productName}</h4>
                         <p className="text-base font-bold">Band Name: {product.brandName}</p>
-                        <p className="">Type: {product.productType} </p>
+                        <p>Type: {product.productType} </p>
                         <p>Price: {product.productPrice}$ </p>
                         <p className="mb-2">Rating: {product.rating}/10 </p>
-                        <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white mb-2 mr-6">Details</button></Link>
-                        <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Update</button></Link>
+                        <div className="flex justify-between items-center px-10">
+                            <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Details</button></Link>
+                            <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Update</button></Link>
+                        </div>
                     </div>)
                         : <div className="min-h-screen flex items-center justify-center">
                             <p className="text-xl text-red-600">No Data Found</p>
