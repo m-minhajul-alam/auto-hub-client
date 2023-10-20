@@ -17,19 +17,21 @@ const Navbar = () => {
                         : "font-light"
             }> Home </NavLink></li>
 
-        <li><NavLink to={"/addProduct"}
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" :
-                    isActive ? "font-semibold  text-red-600"
-                        : "font-light"
-            }> Add Product </NavLink></li>
+        {user && <>
+            <li><NavLink to={"/addProduct"}
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" :
+                        isActive ? "font-semibold  text-red-600"
+                            : "font-light"
+                }> Add Product </NavLink></li>
 
-        <li><NavLink to={"/myCart"}
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" :
-                    isActive ? "font-semibold  text-red-600"
-                        : "font-light"
-            }> My Cart </NavLink></li>
+            <li><NavLink to={"/myCart"}
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" :
+                        isActive ? "font-semibold  text-red-600"
+                            : "font-light"
+                }> My Cart </NavLink></li>
+        </>}
 
         <li><NavLink to={"/login"}
             className={({ isActive, isPending }) =>
