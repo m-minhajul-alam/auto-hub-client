@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
 import Slider from "../components/Slider";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
-
-    const { id } = useParams();
-    if (id == 1) {
-        products.find(product => product.brandName === "BMW")
-        setProducts(products);
-    }
 
     useEffect(() => {
         fetch('http://localhost:5000/products')
