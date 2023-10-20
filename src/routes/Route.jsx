@@ -33,17 +33,17 @@ const router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://auto-hub-server-3dj7qilkx-muhammad-minhajul-alams-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: '/productDetail/:id',
                 element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://auto-hub-server-3dj7qilkx-muhammad-minhajul-alams-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: '/myCart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/myCart')
+                loader: () => fetch('https://auto-hub-server-3dj7qilkx-muhammad-minhajul-alams-projects.vercel.app/myCart')
             },
             {
                 path: '/register',

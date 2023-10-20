@@ -8,7 +8,7 @@ const ProductDetail = () => {
     console.log(myCart);
 
     const handelMyCart = () => {
-        fetch('http://localhost:5000/myCart', {
+        fetch('https://auto-hub-server-3dj7qilkx-muhammad-minhajul-alams-projects.vercel.app/myCart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -18,7 +18,7 @@ const UpdateProduct = () => {
         const rating = (form.get('rating'));
         const updateProduct = { productImage, productName, brandName, productType, productPrice, shortDesc, rating };
 
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://auto-hub-server-3dj7qilkx-muhammad-minhajul-alams-projects.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

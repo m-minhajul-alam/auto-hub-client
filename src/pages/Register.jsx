@@ -9,6 +9,7 @@ const Register = () => {
     const [passError, setPassError] = useState(" ");
     const [regSuccess, setRegSuccess] = useState(" ");
     const [showPass, setShowPass] = useState(false);
+    const [namePhoto, setNamePhoto] = useState()
     const navigate = useNavigate();
     const location = useLocation();
 

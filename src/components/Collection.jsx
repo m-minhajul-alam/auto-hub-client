@@ -1,7 +1,7 @@
 const Collection = () => {
     return (
         <div className="py-10 container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-center  mb-7">Populer <span className="text-red-600">Collection</span></h2>
+            <h2 className="text-3xl font-bold text-center  mb-7">Populer <span className="text-red-600">Collections</span></h2>
             <div className="flex flex-wrap justify-center mt-6">
                 <div className="m-4">
                     <img src="https://i.ibb.co/58cW3xT/Mercedes-Benz-1.png" alt="" className="rounded-lg shadow-md w-64 h-64 object-cover" />

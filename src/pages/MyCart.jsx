@@ -25,7 +25,7 @@ const MyCart = () => {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myCart/${_id}`, {
+                fetch(`https://auto-hub-server-3dj7qilkx-muhammad-minhajul-alams-projects.vercel.app/myCart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -33,7 +33,7 @@ const MyCart = () => {
                         if (data.deletedCount > 0) {
                             swalWithBootstrapButtons.fire(
                                 'Deleted!',
-                                'Your one cart has been deleted.',
+                                `Cart has been deleted.`,
                                 'success'
                             )
                         }
