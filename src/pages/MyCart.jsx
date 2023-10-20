@@ -64,7 +64,7 @@ const MyCart = () => {
                     carts.map(myCart => <div className="border border-gray-400 rounded-md flex flex-col md:flex-row justify-between items-center" key={myCart._id}>
                         <img className="h-32 p-3" src={myCart.productImage} alt="" />
                         <div className="space-y-1 p-2 text-center md:text-right">
-                            <h4 className="text-xl font-bold pb-2">{myCart.productName}</h4>
+                            <h4 className="text-xl font-bold">{myCart.productName}</h4>
                             <p>Price: {myCart.productPrice}$ </p>
                             <Link to={`/productDetail/${myCart._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white mr-2">Details</button></Link>
                             <button onClick={() => handelDelete(myCart._id)} className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Delete</button>

@@ -3,7 +3,7 @@ const AboutUs = () => {
         <div className="py-12">
             <div className="container mx-auto flex flex-col items-center">
             <h2 className="text-3xl font-bold text-center  mb-7">About <span className="text-red-600">Us</span></h2>
-                <p className="text-gray-400 text-center max-w-2xl">
+                <p className="text-gray-400 text-center max-w-5xl">
                     <span>At <span className="text-red-600">AUTOHub</span>, we are a passionate team dedicated to providing high-quality products and exceptional services to our valued customers. With over 15 years of experience in the automotive industry, we pride ourselves on our unwavering commitment to excellence.</span>
                     <br />
                     <br />
