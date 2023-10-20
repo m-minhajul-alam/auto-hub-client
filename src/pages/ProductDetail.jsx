@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../proivders/AuthProvider";
 
 const ProductDetail = () => {
+    const { user } = useContext(AuthContext)
+    const userMail = (user.email);
     const loadedProduct = useLoaderData();
     const { productImage, productName, brandName, productType, productPrice, shortDesc, rating } = loadedProduct;
-    const myCart = { productImage, productName, brandName, productType, productPrice, shortDesc, rating };
-    console.log(myCart);
+    const myCart = { userMail, productImage, productName, brandName, productType, productPrice, shortDesc, rating };
 
     const handelMyCart = () => {
         fetch('https://auto-hub-server-jqo6suew1-muhammad-minhajul-alams-projects.vercel.app/myCart', {
@@ -40,7 +43,7 @@ const ProductDetail = () => {
                         <h5 className="text-sm font-bold mb-2">Brand Name: <span className="font-normal">{brandName}</span></h5>
                         <h5 className="text-sm font-bold mb-2">Product Type: <span className="font-normal">{productType}</span></h5>
                         <h5 className="text-sm font-bold mb-2">Short Description: <span className="font-normal">{shortDesc}</span></h5>
-                        <h5 className="text-sm font-bold mb-2">Rating: <span className="font-normal">{rating}/10</span></h5>
+                        <h5 className="text-sm font-bold mb-2">Rating: <span className="font-normal">{rating}/5</span></h5>
                         <h5 className="text-sm font-bold">Product Price: <span className="font-normal"> {productPrice}$</span></h5>
                         <button onClick={handelMyCart} className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white mt-5">Add To Cart</button>
                     </div>

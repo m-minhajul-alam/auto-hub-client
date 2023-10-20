@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../proivders/AuthProvider";
 
 const MyCart = () => {
+    const { user } = useContext(AuthContext)
     const myCarts = useLoaderData();
-    const [carts, setCarts] = useState(myCarts);
+    const [carts, setCarts] = useState([]);
+
+    useEffect(() => {
+        const userCart = myCarts.filter((cart) => cart.userMail === user.email);
+        setCarts(userCart);
+    }, [myCarts, user.email]);
 
     const handelDelete = (_id) => {
         const swalWithBootstrapButtons = Swal.mixin({
@@ -37,7 +44,7 @@ const MyCart = () => {
                                 'success'
                             )
                         }
-                        const remainingCart = myCarts.filter(cart => cart._id !== _id);
+                        const remainingCart = carts.filter((cart) => cart._id !== _id);
                         setCarts(remainingCart);
                     })
             } else if (

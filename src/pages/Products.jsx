@@ -21,22 +21,22 @@ const Products = () => {
     useEffect(() => {
         if (id == 1) {
             const filtered = loadedProducts.filter(product => { return product.brandName === "Toyota" })
-            setProducts(filtered);
+            return setProducts(filtered);
         } else if (id == 2) {
             const filtered = loadedProducts.filter(product => { return product.brandName === "Rolls Royce" })
-            setProducts(filtered);
+            return setProducts(filtered);
         } else if (id == 3) {
             const filtered = loadedProducts.filter(product => { return product.brandName === "BMW" })
-            setProducts(filtered);
+            return setProducts(filtered);
         } else if (id == 4) {
             const filtered = loadedProducts.filter(product => { return product.brandName === "Mercedes-Benz" })
-            setProducts(filtered);
+            return setProducts(filtered);
         } else if (id == 5) {
             const filtered = loadedProducts.filter(product => { return product.brandName === "Tesla" })
-            setProducts(filtered);
+            return setProducts(filtered);
         } else if (id == 6) {
             const filtered = loadedProducts.filter(product => { return product.brandName === "Honda" })
-            setProducts(filtered);
+            return setProducts(filtered);
         }
     }, [id, loadedProducts])
 
@@ -51,7 +51,7 @@ const Products = () => {
                         <p className="text-base font-bold">Band Name: {product.brandName}</p>
                         <p>Type: {product.productType} </p>
                         <p>Price: {product.productPrice}$ </p>
-                        <p className="mb-2">Rating: {product.rating}/10 </p>
+                        <p className="mb-2">Rating: {product.rating}/5 </p>
                         <div className="flex justify-between items-center px-10">
                             <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Details</button></Link>
                             <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Update</button></Link>

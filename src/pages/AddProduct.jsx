@@ -1,7 +1,14 @@
+import { useState } from 'react';
 import Swal from "sweetalert2";
+import Rating from 'react-rating-stars-component';
 
 const AddProduct = () => {
-    const handelAddProduct = (e) => {
+    const [userRating, setUserRating] = useState(0);
+
+    const handleRating = (rating) => {
+        setUserRating(rating);
+    };
+    const handleAddProduct = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const productImage = (form.get('productImage'));
@@ -10,8 +17,7 @@ const AddProduct = () => {
         const productType = (form.get('productType'));
         const productPrice = (form.get('productPrice'));
         const shortDesc = (form.get('shortDesc'));
-        const rating = (form.get('rating'));
-        const newProduct = { productImage, productName, brandName, productType, productPrice, shortDesc, rating };
+        const newProduct = { productImage, productName, brandName, productType, productPrice, shortDesc, rating: userRating };
 
         fetch('https://auto-hub-server-jqo6suew1-muhammad-minhajul-alams-projects.vercel.app/products', {
             method: 'POST',
@@ -40,7 +46,7 @@ const AddProduct = () => {
             </div>
             <div className="hero">
                 <div className="flex-shrink-0 w-full max-w-sm">
-                    <form onSubmit={handelAddProduct}>
+                    <form onSubmit={handleAddProduct}>
                         <div className="form-control my-2">
                             <input type="url" name='productImage' placeholder="Product Image URL" className="input input-bordered text-sm" />
                         </div>
@@ -72,7 +78,8 @@ const AddProduct = () => {
                         </div>
 
                         <div className="form-control my-2">
-                            <input type="text" name='rating' placeholder="Rating" className="input input-bordered text-sm" required />
+                            <Rating count={5} onChange={handleRating} size={24} value={userRating} />
+                            <p>Your Rating: {userRating} stars</p>
                         </div>
 
                         <div className="form-control my-2">
