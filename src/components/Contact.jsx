@@ -7,7 +7,7 @@ const Contact = () => {
                 <p className=" mb-4">Feel free to reach out to us via email or phone. We are available to assist you.</p>
                 <p>support@autohub.com</p>
                 <p>(123) 456-7890</p>
-                <p>1234 Elm Street, City, Country</p>
+                <p>1234 Elm Street, London, USA.</p>
             </div>
         </div>
     );
