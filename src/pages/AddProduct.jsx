@@ -13,7 +13,7 @@ const AddProduct = () => {
         const rating = (form.get('rating'));
         const newProduct = { productImage, productName, brandName, productType, productPrice, shortDesc, rating };
 
-        fetch('https://auto-hub-server-3dj7qilkx-muhammad-minhajul-alams-projects.vercel.app/products', {
+        fetch('https://auto-hub-server-jqo6suew1-muhammad-minhajul-alams-projects.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

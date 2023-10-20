@@ -25,7 +25,7 @@ const MyCart = () => {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://auto-hub-server-3dj7qilkx-muhammad-minhajul-alams-projects.vercel.app/myCart/${_id}`, {
+                fetch(`https://auto-hub-server-jqo6suew1-muhammad-minhajul-alams-projects.vercel.app/myCart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
