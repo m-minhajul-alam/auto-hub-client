@@ -39,7 +39,7 @@ const ProductDetail = () => {
             <div className="max-w-6xl w-[90%] mx-auto mt-5">
                 <div className="flex flex-col lg:flex-row mb-10 gap-7">
                     <img className="h-full max-w-xl" src={productImage} alt="" />
-                    <div className="flex-1 text-center md:text-left">
+                    <div className="flex-1">
                         <h1 className="text-xl font-bold mb-3">{productName}</h1>
                         <h5 className="text-sm font-bold mb-2">Brand Name: <span className="font-normal">{brandName}</span></h5>
                         <h5 className="text-sm font-bold mb-2">Product Type: <span className="font-normal">{productType}</span></h5>
