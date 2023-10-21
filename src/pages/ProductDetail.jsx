@@ -31,9 +31,9 @@ const ProductDetail = () => {
             })
     }
     return (
-        <div className="min-h-[80vh]">
+        <div className="min-h-screen">
             <div className="h-20">
-                <h1 className="text-3xl text-center font-bold pt-3">Details of {productName}</h1>
+                <h2 className="text-3xl font-bold text-center  mb-7">Details of <span className="text-red-600">{productName}</span></h2>
             </div>
             <div className="max-w-6xl w-[90%] mx-auto mt-5">
                 <div className="flex flex-col lg:flex-row mb-10 gap-7">

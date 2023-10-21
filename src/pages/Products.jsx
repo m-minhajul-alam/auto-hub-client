@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Slider from "../components/Slider";
 import { Link, useParams } from "react-router-dom";
+import UserRating from "../components/UserRating";
+// import { Rating } from "primereact/rating";
 
 const Products = () => {
     const [loadedProducts, setLoadedProducts] = useState([]);
@@ -39,9 +41,10 @@ const Products = () => {
             return setProducts(filtered);
         }
     }, [id, loadedProducts])
+    console.log(products.rating);
 
     return (
-        <div className="min-h-[80vh]">
+        <div className="min-h-screen">
             <Slider></Slider>
             {
                 products.length === 0 ? (
@@ -57,6 +60,8 @@ const Products = () => {
                                 <p>Type: {product.productType} </p>
                                 <p>Price: {product.productPrice}$ </p>
                                 <p className="mb-2">Rating: {product.rating}/5 </p>
+                                <UserRating value={5} readOnly cancel={false}></UserRating>
+                                {/* <Rating value={5} readOnly cancel={false} /> */}
                                 <div className="flex justify-between items-center px-10">
                                     <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Details</button></Link>
                                     <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Update</button></Link>

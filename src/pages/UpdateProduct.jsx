@@ -11,7 +11,6 @@ const UpdateProduct = () => {
     };
     const loadedProduct = useLoaderData();
     const { _id, productImage, productName, brandName, productType, productPrice, shortDesc, rating } = loadedProduct;
-    // const navigate = useNavigate();
 
     const handelUpdateProduct = (e) => {
         e.preventDefault();
@@ -42,14 +41,12 @@ const UpdateProduct = () => {
                     })
                 }
             })
-
-        // navigate(location?.state ? location.state : `/`)
     }
 
     return (
-        <div>
+        <div className="min-h-screen flex flex-col justify-center items-center">
             <div className="h-20">
-                <h1 className="text-red-600 text-3xl text-center font-bold">Update Product</h1>
+            <h2 className="text-3xl font-bold text-center  mb-7">Update <span className="text-red-600">Product</span></h2>
             </div>
             <div className="hero">
                 <div className="flex-shrink-0 w-full max-w-sm">

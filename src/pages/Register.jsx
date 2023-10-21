@@ -53,7 +53,7 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className="min-h-screen flex flex-col justify-center items-center">
             <div className="h-20">
                 <h1 className="text-red-600 text-3xl text-center font-bold">Register Now!</h1>
             </div>

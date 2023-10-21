@@ -61,7 +61,7 @@ const MyCart = () => {
     }
 
     return (
-        <div className="min-h-[80vh]">
+        <div className="min-h-screen">
             <div className="h-20">
             <h2 className="text-3xl font-bold text-center  mb-7">My <span className="text-red-600">Carts</span></h2>
             </div>
