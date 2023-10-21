@@ -31,7 +31,7 @@ const ProductDetail = () => {
             })
     }
     return (
-        <div>
+        <div className="min-h-[80vh]">
             <div className="h-20">
                 <h1 className="text-3xl text-center font-bold pt-3">Details of {productName}</h1>
             </div>

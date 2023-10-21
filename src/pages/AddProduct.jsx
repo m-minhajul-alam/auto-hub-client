@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Swal from "sweetalert2";
 import Rating from 'react-rating-stars-component';
+import { useRef } from 'react';
 
 const AddProduct = () => {
     const [userRating, setUserRating] = useState(0);
+    const formRef = useRef();
 
     const handleRating = (rating) => {
         setUserRating(rating);
@@ -34,19 +36,21 @@ const AddProduct = () => {
                         text: 'New Product Added',
                         icon: 'success',
                         confirmButtonText: 'Okay'
-                    })
+                    });
+                    formRef.current.reset();
+                    setUserRating(0);
                 }
-            })
+            });
     }
 
     return (
         <div>
             <div className="h-20">
-                <h1 className="text-red-600 text-3xl text-center font-bold">Add A New Product</h1>
+                <h2 className="text-3xl font-bold text-center  mb-7">Add <span className="text-red-600">Product</span></h2>
             </div>
             <div className="hero">
                 <div className="flex-shrink-0 w-full max-w-sm">
-                    <form onSubmit={handleAddProduct}>
+                    <form onSubmit={handleAddProduct} ref={formRef}>
                         <div className="form-control my-2">
                             <input type="url" name='productImage' placeholder="Product Image URL" className="input input-bordered text-sm" />
                         </div>
@@ -77,9 +81,8 @@ const AddProduct = () => {
                             <input type="text" name='shortDesc' placeholder="Short description" className="input input-bordered text-sm" required />
                         </div>
 
-                        <div className="form-control my-2">
+                        <div className="form-control my-2  flex justify-center items-center">
                             <Rating count={5} onChange={handleRating} size={24} value={userRating} />
-                            <p>Your Rating: {userRating} stars</p>
                         </div>
 
                         <div className="form-control my-2">

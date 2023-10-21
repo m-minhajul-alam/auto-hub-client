@@ -41,24 +41,30 @@ const Products = () => {
     }, [id, loadedProducts])
 
     return (
-        <div>
+        <div className="min-h-[80vh]">
             <Slider></Slider>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                {
-                    products.map(product => <div className="border border-gray-400 rounded-md text-center p-2 " key={product._id}>
-                        <img className="h-56" src={product.productImage} alt="" />
-                        <h4 className="text-xl font-bold">Name: {product.productName}</h4>
-                        <p className="text-base font-bold">Band Name: {product.brandName}</p>
-                        <p>Type: {product.productType} </p>
-                        <p>Price: {product.productPrice}$ </p>
-                        <p className="mb-2">Rating: {product.rating}/5 </p>
-                        <div className="flex justify-between items-center px-10">
-                            <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Details</button></Link>
-                            <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Update</button></Link>
-                        </div>
-                    </div>)
-                }
-            </div>
+            {
+                products.length === 0 ? (
+                    <p className="text-center text-gray-500 mt-24 font-bold">No Data Found</p>
+                ) :
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                        {
+
+                            (products.map(product => <div className="border border-gray-400 rounded-md text-center p-2 " key={product._id}>
+                                <img className="h-56" src={product.productImage} alt="" />
+                                <h4 className="text-xl font-bold">Name: {product.productName}</h4>
+                                <p className="text-base font-bold">Band Name: {product.brandName}</p>
+                                <p>Type: {product.productType} </p>
+                                <p>Price: {product.productPrice}$ </p>
+                                <p className="mb-2">Rating: {product.rating}/5 </p>
+                                <div className="flex justify-between items-center px-10">
+                                    <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Details</button></Link>
+                                    <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Update</button></Link>
+                                </div>
+                            </div>))
+                        }
+                    </div>
+            }
         </div>
     );
 };

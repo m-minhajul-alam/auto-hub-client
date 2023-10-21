@@ -32,9 +32,9 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="min-h-[75vh]">
             <div className="h-20">
-                <h1 className="text-red-600 text-3xl text-center font-bold">Login Now!</h1>
+            <h2 className="text-3xl font-bold text-center  mb-7">Login <span className="text-red-600">Now!</span></h2>
             </div>
             <div className="hero h-full py-2">
                 <div className="flex-shrink-0 w-full max-w-sm">

@@ -61,22 +61,24 @@ const MyCart = () => {
     }
 
     return (
-        <div>
+        <div className="min-h-[80vh]">
             <div className="h-20">
-                <h1 className="text-red-600 text-3xl text-center font-bold">My Cart</h1>
+            <h2 className="text-3xl font-bold text-center  mb-7">My <span className="text-red-600">Carts</span></h2>
             </div>
 
             <div className="max-w-lg mx-auto space-y-3">
                 {
-                    carts.map(myCart => <div className="border border-gray-400 rounded-md flex flex-col md:flex-row justify-between items-center" key={myCart._id}>
-                        <img className="h-32 p-3" src={myCart.productImage} alt="" />
-                        <div className="space-y-1 p-2 text-center md:text-right">
-                            <h4 className="text-xl font-bold">{myCart.productName}</h4>
-                            <p>Price: {myCart.productPrice}$ </p>
-                            <Link to={`/productDetail/${myCart._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white mr-2">Details</button></Link>
-                            <button onClick={() => handelDelete(myCart._id)} className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Delete</button>
-                        </div>
-                    </div>)
+                    carts.length === 0 ? (
+                        <p className="text-center text-gray-500 mt-48 font-bold">No Cart Added</p>
+                    ) :
+                        (carts.map(myCart => <div className="border border-gray-400 rounded-md flex flex-col md:flex-row justify-between items-center" key={myCart._id}>
+                            <img className="h-32 p-3" src={myCart.productImage} alt="" />
+                            <div className="space-y-1 p-2 text-center md:text-right">
+                                <h4 className="text-xl font-bold">{myCart.productName}</h4>
+                                <p>Price: {myCart.productPrice}$ </p>
+                                <button onClick={() => handelDelete(myCart._id)} className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Delete Item</button>
+                            </div>
+                        </div>))
                 }
             </div>
         </div>

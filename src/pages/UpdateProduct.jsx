@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import Rating from 'react-rating-stars-component';
 
@@ -11,7 +11,7 @@ const UpdateProduct = () => {
     };
     const loadedProduct = useLoaderData();
     const { _id, productImage, productName, brandName, productType, productPrice, shortDesc, rating } = loadedProduct;
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handelUpdateProduct = (e) => {
         e.preventDefault();
@@ -43,7 +43,7 @@ const UpdateProduct = () => {
                 }
             })
 
-        navigate(location?.state ? location.state : '/')
+        // navigate(location?.state ? location.state : `/`)
     }
 
     return (
@@ -84,9 +84,8 @@ const UpdateProduct = () => {
                             <input type="text" name='shortDesc' defaultValue={shortDesc} placeholder="Short description" className="input input-bordered text-sm" required />
                         </div>
 
-                        <div className="form-control my-2">
+                        <div className="form-control my-2 flex justify-center items-center">
                             <Rating count={5} onChange={handleRating} size={24} value={userRating} />
-                            <p>Your Rating: {userRating} stars</p>
                         </div>
 
                         <div className="form-control my-2">
