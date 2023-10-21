@@ -40,7 +40,6 @@ const Products = () => {
             return setProducts(filtered);
         }
     }, [id, loadedProducts])
-    console.log(products.rating);
 
     return (
         <div className="min-h-screen">

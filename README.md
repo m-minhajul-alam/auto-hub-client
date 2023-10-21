@@ -14,5 +14,5 @@ About AUTOHUB project:
 - User can change dark/light theme by clicking toggle button on Navbar.
 
 
-## [ Visit our website](http://autohub.b8a10.surge.sh/)
-URL: http://autohub.b8a10.surge.sh/
+## [ Visit our website](https://autohub-b8a10-abcd.surge.sh/)
+URL: https://autohub-b8a10-abcd.surge.sh/

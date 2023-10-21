@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from "react";
 import { AuthContext } from '../proivders/AuthProvider';
 
@@ -7,6 +7,9 @@ const Login = () => {
     const [loginError, setLoginError] = useState(" ");
     const [loginSuccess, setLoginSuccess] = useState(" ");
     const [showPass, setShowPass] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const hendelLogin = (e) => {
         e.preventDefault();
         const from = new FormData(e.currentTarget)
@@ -19,6 +22,7 @@ const Login = () => {
                 console.log(result);
                 setLoginSuccess("Login Success.");
                 e.target.reset();
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 setLoginError(error.message);
@@ -29,12 +33,13 @@ const Login = () => {
         googleSingIn()
             .then(result => console.log(result.user))
             .catch(error => console.log(error.message))
+        navigate(location?.state ? location.state : '/')
     }
 
     return (
         <div className="min-h-screen flex flex-col justify-center items-center">
             <div className="h-20">
-            <h2 className="text-3xl font-bold text-center  mb-7">Login <span className="text-red-600">Now!</span></h2>
+                <h2 className="text-3xl font-bold text-center  mb-7">Login <span className="text-red-600">Now!</span></h2>
             </div>
             <div className="hero h-full py-2">
                 <div className="flex-shrink-0 w-full max-w-sm">
