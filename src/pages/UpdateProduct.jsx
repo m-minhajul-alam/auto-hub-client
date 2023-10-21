@@ -46,7 +46,7 @@ const UpdateProduct = () => {
     return (
         <div className="min-h-screen flex flex-col justify-center items-center">
             <div className="h-20">
-            <h2 className="text-3xl font-bold text-center  mb-7">Update <span className="text-red-600">Product</span></h2>
+                <h2 className="text-3xl font-bold text-center  mb-7">Update <span className="text-red-600">Product</span></h2>
             </div>
             <div className="hero">
                 <div className="flex-shrink-0 w-full max-w-sm">
@@ -82,7 +82,8 @@ const UpdateProduct = () => {
                         </div>
 
                         <div className="form-control my-2 flex justify-center items-center">
-                            <Rating count={5} onChange={handleRating} size={24} value={userRating} />
+                            <p>Select Your Rating</p>
+                            <Rating count={5} onChange={handleRating} size={24} value={rating} />
                         </div>
 
                         <div className="form-control my-2">

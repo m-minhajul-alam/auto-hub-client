@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import Slider from "../components/Slider";
 import { Link, useParams } from "react-router-dom";
-import UserRating from "../components/UserRating";
-// import { Rating } from "primereact/rating";
+import Rating from 'react-rating-stars-component';
 
 const Products = () => {
     const [loadedProducts, setLoadedProducts] = useState([]);
@@ -59,9 +58,10 @@ const Products = () => {
                                 <p className="text-base font-bold">Band Name: {product.brandName}</p>
                                 <p>Type: {product.productType} </p>
                                 <p>Price: {product.productPrice}$ </p>
+                                <div className="flex justify-center items-center">
+                                    <Rating value={product.rating} readOnly cancel={false} />
+                                </div>
                                 <p className="mb-2">Rating: {product.rating}/5 </p>
-                                <UserRating value={5} readOnly cancel={false}></UserRating>
-                                {/* <Rating value={5} readOnly cancel={false} /> */}
                                 <div className="flex justify-between items-center px-10">
                                     <Link to={`/productDetail/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white">Details</button></Link>
                                     <Link to={`/updateProduct/${product._id}`}><button className="btn btn-primary border-none hover:border-none bg-red-600 hover:bg-red-700 text-white ">Update</button></Link>

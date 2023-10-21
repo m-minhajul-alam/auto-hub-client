@@ -82,6 +82,7 @@ const AddProduct = () => {
                         </div>
 
                         <div className="form-control my-2  flex justify-center items-center">
+                            <p>Select Your Rating</p>
                             <Rating count={5} onChange={handleRating} size={24} value={userRating} />
                         </div>
 
