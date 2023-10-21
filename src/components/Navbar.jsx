@@ -101,8 +101,7 @@ const Navbar = () => {
             {/* Navbar for sm screen */}
             <div className="navbar lg:hidden">
                 <div className="flex-1">
-                    <a href='/'
-                        className="text-xl font-bold ">
+                    <a href='/' className="text-xl font-bold ">
                         <span>AUTO<span className="text-red-600">Hub</span></span></a>
                 </div>
 
